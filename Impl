@@ -48,7 +48,7 @@ The key function next(int num) of my DataSetIterator is as follow:
         	maxFrames = Math.max(maxFrames, l.size());
         }
         
-        maxLength = maxFrames;//暂时不限制frame数
+        maxLength = maxFrames;
         INDArray features = Nd4j.create(mfccList.size(), this.vectorSize, maxLength);
         INDArray labels = Nd4j.create(mfccList.size(), numberOfLabels, maxLength); 
         INDArray featuresMask = Nd4j.zeros(mfccList.size(), maxLength);
@@ -75,7 +75,7 @@ The key function next(int num) of my DataSetIterator is as follow:
 
         return new DataSet(features,labels,featuresMask,labelsMask);
     }
-    
+    -----------------------------------------------------------------------------------------------
     And the RNN configuration is as follow :
     
         int batchSize = 30;     //Number of examples in each minibatch
@@ -129,7 +129,7 @@ The key function next(int num) of my DataSetIterator is as follow:
             System.out.println(evaluation.stats());
         }
         
-        
+    ---------------------------------------------------------------------------------------------------------------    
         
         My questions are :
         1. Is my thinking right?
